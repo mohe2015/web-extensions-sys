@@ -7,6 +7,7 @@ mod action;
 mod bookmarks;
 #[cfg(feature = "firefox")]
 mod browser_action;
+mod cookies;
 mod commands;
 #[cfg(feature = "firefox")]
 mod contextual_identities;
@@ -30,6 +31,7 @@ pub use action::*;
 pub use bookmarks::*;
 #[cfg(feature = "firefox")]
 pub use browser_action::*;
+pub use cookies::*;
 pub use commands::*;
 #[cfg(feature = "firefox")]
 pub use contextual_identities::*;
@@ -83,6 +85,9 @@ extern "C" {
     #[cfg(feature = "firefox")]
     #[wasm_bindgen(method, getter, js_name = browserAction)]
     pub fn browser_action(this: &Browser) -> BrowserAction;
+
+    #[wasm_bindgen(method, getter)]
+    pub fn cookies(this: &Browser) -> Cookies;
 
     #[cfg(feature = "firefox")]
     #[wasm_bindgen(method, getter, js_name = contextualIdentities)]
