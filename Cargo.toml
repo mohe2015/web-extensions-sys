@@ -15,7 +15,7 @@ keywords = ["api", "ffi", "wasm", "web", "webassembly"]
 categories = ["external-ffi-bindings", "wasm"]
 
 [lib]
-crate-type = ["cdylib", "rlib"]
+crate-type = ["rlib"]
 
 [dependencies]
 js-sys = "0.3.61"
